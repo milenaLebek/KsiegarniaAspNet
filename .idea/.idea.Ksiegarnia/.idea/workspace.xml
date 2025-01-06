@@ -9,19 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe2fcf2-f370-411d-90ac-79b13129e105" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ksiegarnia/Models/Author.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ksiegarnia/Models/Book.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ksiegarnia/Models/Genre.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Models/ErrorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Models/ErrorViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Views/Home/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Views/Home/Privacy.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Views/Shared/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Views/Shared/Error.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Views/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Views/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Views/_ViewImports.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Views/_ViewStart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Views/_ViewStart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Ksiegarnia.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Ksiegarnia.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736124039477</updated>
-      <workItem from="1736124041078" duration="807000" />
+      <workItem from="1736124041078" duration="1119000" />
     </task>
     <servers />
   </component>

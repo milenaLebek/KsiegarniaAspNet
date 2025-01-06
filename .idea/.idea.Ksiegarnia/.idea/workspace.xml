@@ -9,10 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe2fcf2-f370-411d-90ac-79b13129e105" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ksiegarnia/Data/ApplicationDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ksiegarnia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ksiegarnia/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Ksiegarnia.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Ksiegarnia.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736124039477</updated>
-      <workItem from="1736124041078" duration="1491000" />
+      <workItem from="1736124041078" duration="2270000" />
     </task>
     <servers />
   </component>

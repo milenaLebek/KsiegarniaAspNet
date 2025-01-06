@@ -10,7 +10,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cfe2fcf2-f370-411d-90ac-79b13129e105" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ksiegarnia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ksiegarnia/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Ksiegarnia.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Ksiegarnia.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ksiegarnia/Models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/Models/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ksiegarnia/ksiegarnia.db" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/ksiegarnia.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ksiegarnia/ksiegarnia.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/ksiegarnia.db-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ksiegarnia/ksiegarnia.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/Ksiegarnia/ksiegarnia.db-wal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,21 +27,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "milenaLebek"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;milenaLebek&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/milenaLebek/KsiegarniaAspNet.git",
-    "accountId": "8d542213-4d52-410a-b3fc-860fb9d2a594"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/milenaLebek/KsiegarniaAspNet.git&quot;,
+    &quot;accountId&quot;: &quot;8d542213-4d52-410a-b3fc-860fb9d2a594&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2rEV5XtFHQC0k2ofanUBimz3ewo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,13 +52,20 @@
   "keyToString": {
     ".NET Launch Settings Profile.Ksiegarnia: http.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.23236515",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Ksiegarnia: http">
@@ -98,6 +109,8 @@
       <option name="presentableId" value="Default" />
       <updated>1736124039477</updated>
       <workItem from="1736124041078" duration="2270000" />
+      <workItem from="1736126318962" duration="2066000" />
+      <workItem from="1736169814678" duration="4027000" />
     </task>
     <servers />
   </component>
@@ -107,5 +120,24 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Ksiegarnia/Controllers/BookController.cs</url>
+          <line>63</line>
+          <properties documentPath="$PROJECT_DIR$/Ksiegarnia/Controllers/BookController.cs" containingFunctionPresentation="Method 'Create'">
+            <startOffsets>
+              <option value="1966" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1989" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

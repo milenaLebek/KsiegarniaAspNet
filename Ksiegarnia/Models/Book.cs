@@ -26,7 +26,8 @@ public class Book
     public decimal Price {get; set;}
     
     [StringLength(500)]
-    public string Description {get; set;}
+    public string Description { get; set; } = string.Empty;
+
     
     [Required]
     public int GenreId {get; set;}

@@ -49,8 +49,8 @@ namespace Ksiegarnia.Controllers
         // GET: Book/Create
         public IActionResult Create()
         {
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "Name");
-            ViewData["GenreId"] = new SelectList(_context.Genres, "Id", "Name");
+            ViewBag.AuthorList = new SelectList(_context.Authors, "Id", "Name");
+            ViewBag.GenreList = new SelectList(_context.Genres, "Id", "Name");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace Ksiegarnia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,AuthorId,ISBN,Price,Description,GenreId,PublicationYear")] Book book)
+        public async Task<IActionResult> Create([Bind("Title,AuthorId,ISBN,Price,Description,GenreId,PublicationYear")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -67,8 +67,10 @@ namespace Ksiegarnia.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "Name", book.AuthorId);
-            ViewData["GenreId"] = new SelectList(_context.Genres, "Id", "Name", book.GenreId);
+
+            // Ponowne wypełnienie list w przypadku błędu walidacji
+            ViewBag.AuthorList = new SelectList(_context.Authors, "Id", "Name", book.AuthorId);
+            ViewBag.GenreList = new SelectList(_context.Genres, "Id", "Name", book.GenreId);
             return View(book);
         }
 

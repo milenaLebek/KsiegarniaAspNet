@@ -22,7 +22,7 @@ namespace Ksiegarnia.Controllers
         // GET: Genre
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Authors.ToListAsync());
+            return View(await _context.Genres.ToListAsync());
         }
 
         // GET: Genre/Details/5
@@ -33,14 +33,14 @@ namespace Ksiegarnia.Controllers
                 return NotFound();
             }
 
-            var author = await _context.Authors
+            var genre = await _context.Genres
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (author == null)
+            if (genre == null)
             {
                 return NotFound();
             }
 
-            return View(author);
+            return View(genre);
         }
 
         // GET: Genre/Create
@@ -54,15 +54,15 @@ namespace Ksiegarnia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Author author)
+        public async Task<IActionResult> Create([Bind("Id,Name")] Genre genre)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(author);
+                _context.Add(genre);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(author);
+            return View(genre);
         }
 
         // GET: Genre/Edit/5
@@ -73,12 +73,12 @@ namespace Ksiegarnia.Controllers
                 return NotFound();
             }
 
-            var author = await _context.Authors.FindAsync(id);
-            if (author == null)
+            var genre = await _context.Genres.FindAsync(id);
+            if (genre == null)
             {
                 return NotFound();
             }
-            return View(author);
+            return View(genre);
         }
 
         // POST: Genre/Edit/5
@@ -86,9 +86,9 @@ namespace Ksiegarnia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Author author)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Genre genre)
         {
-            if (id != author.Id)
+            if (id != genre.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Ksiegarnia.Controllers
             {
                 try
                 {
-                    _context.Update(author);
+                    _context.Update(genre);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AuthorExists(author.Id))
+                    if (!GenreExists(genre.Id))
                     {
                         return NotFound();
                     }
@@ -113,7 +113,7 @@ namespace Ksiegarnia.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(author);
+            return View(genre);
         }
 
         // GET: Genre/Delete/5
@@ -124,14 +124,14 @@ namespace Ksiegarnia.Controllers
                 return NotFound();
             }
 
-            var author = await _context.Authors
+            var genre = await _context.Genres
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (author == null)
+            if (genre == null)
             {
                 return NotFound();
             }
 
-            return View(author);
+            return View(genre);
         }
 
         // POST: Genre/Delete/5
@@ -139,19 +139,19 @@ namespace Ksiegarnia.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var author = await _context.Authors.FindAsync(id);
-            if (author != null)
+            var genre = await _context.Genres.FindAsync(id);
+            if (genre != null)
             {
-                _context.Authors.Remove(author);
+                _context.Genres.Remove(genre);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AuthorExists(int id)
+        private bool GenreExists(int id)
         {
-            return _context.Authors.Any(e => e.Id == id);
+            return _context.Genres.Any(e => e.Id == id);
         }
     }
 }

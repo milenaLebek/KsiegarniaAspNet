@@ -1,31 +1,30 @@
 using System.Diagnostics;
+using Ksiegarnia.Data;
 using Microsoft.AspNetCore.Mvc;
 using Ksiegarnia.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ksiegarnia.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ApplicationDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ApplicationDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        return View();
-    }
+        var books = _context.Books.Include(b => b.Author).Include(b => b.Genre).ToList();
+        var authors = _context.Authors.ToList();
+        var genres = _context.Genres.ToList();
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        ViewBag.Books = books;
+        ViewBag.Authors = authors;
+        ViewBag.Genres = genres;
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View();
     }
 }

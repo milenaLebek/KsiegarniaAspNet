@@ -1,16 +1,16 @@
 @model IEnumerable<Ksiegarnia.Models.Genre>
 
-<h1>Genres</h1>
+<h1>Gatunki</h1>
 
 <p>
-    <a class="btn btn-primary" href="@Url.Action("Create")">Create New</a>
+    <a class="btn btn-primary" href="@Url.Action("Create")">Utwórz nowy gatunek</a>
 </p>
 
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>Name</th>
-        <th></th>
+        <th>Nazwa gatunku</th>
+        <th>Akcje</th>
     </tr>
     </thead>
     <tbody>
@@ -19,8 +19,8 @@
     <tr>
         <td>@item.Name</td>
         <td>
-            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id })">Edit</a>
-            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.Id })">Delete</a>
+            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id })">Edytuj</a>
+            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.Id })">Usuń</a>
         </td>
     </tr>
     }

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ksiegarnia.Data;
 using Ksiegarnia.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ksiegarnia.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AuthorController : Controller
     {
         private readonly ApplicationDbContext _context;

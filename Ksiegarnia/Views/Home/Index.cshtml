@@ -1,12 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Witamy w Ksiegarnia.NET!";
 }
 
 <div class="text-center">
     <h1 class="display-4">Witaj w Ksiegarnia.NET!</h1>
+    <p class="lead">Odkryj fascynujący świat książek i zacznij swoją literacką podróż już teraz.</p>
+    
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <p>
+            <a class="btn btn-primary btn-lg" href="@Url.Action("Register", "Account")">Zarejestruj się</a>
+        </p>
+    }
 </div>
 
+<hr>
+
 <h2>Dostępne książki</h2>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <p>Przejrzyj naszą wybraną kolekcję książek. Chcesz więcej? Zarejestruj się, aby uzyskać pełny dostęp!</p>
+}
+
 <table class="table table-striped">
     <thead>
     <tr>
@@ -26,3 +42,10 @@
     }
     </tbody>
 </table>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="text-center mt-4">
+        <p><strong>Zarejestruj się, aby uzyskać dostęp do pełnej kolekcji książek i cieszyć się dodatkowymi korzyściami!</strong></p>
+    </div>
+}

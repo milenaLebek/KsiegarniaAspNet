@@ -3,16 +3,16 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to Ksiegarnia!</h1>
+    <h1 class="display-4">Witaj w Ksiegarnia.NET!</h1>
 </div>
 
-<h2>Books</h2>
+<h2>Dostępne książki</h2>
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Genre</th>
+        <th>Tytuł</th>
+        <th>Autor</th>
+        <th>Gatunek</th>
     </tr>
     </thead>
     <tbody>
@@ -26,19 +26,3 @@
     }
     </tbody>
 </table>
-
-<h2>Authors</h2>
-<ul>
-    @foreach (var author in ViewBag.Authors)
-    {
-        <li>@author.Name</li>
-    }
-</ul>
-
-<h2>Genres</h2>
-<ul>
-    @foreach (var genre in ViewBag.Genres)
-    {
-        <li>@genre.Name</li>
-    }
-</ul>

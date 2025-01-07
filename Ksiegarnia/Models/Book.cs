@@ -15,7 +15,7 @@ public class Book
     [Required]
     public int AuthorId {get; set;}
     [ForeignKey(nameof(AuthorId))]
-    public Author Author {get; set;}
+    public Author? Author {get; set;}
     
     [Required]
     [StringLength(13)]
@@ -32,7 +32,7 @@ public class Book
     [Required]
     public int GenreId {get; set;}
     [ForeignKey(nameof(GenreId))]
-    public Genre Genre {get; set;}
+    public Genre? Genre {get; set;}
     
     [Range(0, 3000)]
     public int PublicationYear {get; set;}

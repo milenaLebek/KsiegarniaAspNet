@@ -1,13 +1,18 @@
 using Ksiegarnia.Data;
+using Ksiegarnia.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite("Data Source=ksiegarnia.db"));
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 var app = builder.Build();
@@ -25,6 +30,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.MapRazorPages();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

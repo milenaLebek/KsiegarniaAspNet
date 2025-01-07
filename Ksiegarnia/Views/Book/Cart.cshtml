@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Koszyk";
+}
+
+<h1>Twój koszyk</h1>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <p>Aby dodać książki do koszyka, musisz być zalogowany.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Cena</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody id="cart-items">
+        </tbody>
+    </table>
+    
+    <div>
+        <button class="btn btn-danger" onclick="clearCart()">Wyczyść koszyk</button>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = "<tr><td colspan='3'>Koszyk jest pusty.</td></tr>";
+            }
+
+            cart.forEach(item => {
+                let row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.title}</td>
+                    <td>${item.price.toFixed(2)} PLN</td>
+                    <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${item.bookId})">Usuń</button></td>
+                `;
+                cartItems.appendChild(row);
+            });
+        }
+
+        function removeFromCart(bookId) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart = cart.filter(item => item.bookId !== bookId);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            displayCart();
+        }
+
+        // Display cart when page loads
+        displayCart();
+    </script>
+}

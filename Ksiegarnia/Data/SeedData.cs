@@ -11,7 +11,6 @@ public static class SeedData
         var userManager = serviceProvider.GetRequiredService<UserManager<User>>();
         var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-        // Seed Roles
         var roleExists = await roleManager.RoleExistsAsync("Admin");
         if (!roleExists)
         {
@@ -26,7 +25,6 @@ public static class SeedData
             await roleManager.CreateAsync(role);
         }
 
-        // Seed Admin User
         var adminUser = await userManager.FindByEmailAsync("admin@ksiegarnia.com");
         if (adminUser == null)
         {
@@ -38,7 +36,6 @@ public static class SeedData
             }
         }
 
-        // Seed Normal User
         var normalUser = await userManager.FindByEmailAsync("user@ksiegarnia.com");
         if (normalUser == null)
         {

@@ -1,16 +1,16 @@
 @model IEnumerable<Ksiegarnia.Models.Book>
 
 @{
-    ViewData["Title"] = "Książki";
+ViewData["Title"] = "Książki";
 }
 
 <h1 class="mb-4">Lista książek</h1>
 
 @if (User.IsInRole("Admin"))
 {
-    <p>
-        <a class="btn btn-success" asp-action="Create">Dodaj nową książkę</a>
-    </p>
+<p>
+    <a class="btn btn-success" asp-action="Create">Dodaj nową książkę</a>
+</p>
 }
 
 <table class="table table-bordered table-striped">
@@ -27,21 +27,44 @@
     <tbody>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.Title</td>
-            <td>@item.Author.Name</td>
-            <td>@item.Price.ToString("C")</td>
-            <td>@item.Genre.Name</td>
-            <td>@item.PublicationYear</td>
-            <td>
-                @if (User.IsInRole("Admin"))
-                {
-                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id })">Edytuj</a>
-                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.Id })">Usuń</a>
-                }
-                <a class="btn btn-info btn-sm" href="@Url.Action("Details", new { id = item.Id })">Szczegóły</a>
-            </td>
-        </tr>
+    <tr>
+        <td>@item.Title</td>
+        <td>@item.Author.Name</td>
+        <td>@item.Price.ToString("C")</td>
+        <td>@item.Genre.Name</td>
+        <td>@item.PublicationYear</td>
+        <td>
+            @if (User.IsInRole("Admin"))
+            {
+            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = item.Id })">Edytuj</a>
+            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.Id })">Usuń</a>
+            }
+            <a class="btn btn-info btn-sm" href="@Url.Action("Details", new { id = item.Id })">Szczegóły</a>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+            <button class="btn btn-warning btn-sm" onclick="addToCart(@item.Id, '@item.Title', @item.Price)">Dodaj do koszyka</button>
+            }
+        </td>
+    </tr>
     }
     </tbody>
 </table>
+
+@section Scripts {
+<script>
+    function addToCart(bookId, title, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingItem = cart.find(item => item.bookId === bookId);
+
+        if (existingItem) {
+            alert("Książka już w koszyku!");
+            return;
+        }
+
+        cart.push({ bookId, title, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Książka została dodana do koszyka!");
+    }
+</script>
+}

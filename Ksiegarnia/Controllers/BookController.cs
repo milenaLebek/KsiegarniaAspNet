@@ -26,6 +26,11 @@ namespace Ksiegarnia.Controllers
             var applicationDbContext = _context.Books.Include(b => b.Author).Include(b => b.Genre);
             return View(await applicationDbContext.ToListAsync());
         }
+        
+        public IActionResult Cart()
+        {
+            return View();
+        }
 
         // GET: Book/Details/5
         public async Task<IActionResult> Details(int? id)

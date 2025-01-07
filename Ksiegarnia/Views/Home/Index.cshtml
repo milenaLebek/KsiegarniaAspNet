@@ -9,7 +9,7 @@
     @if (!User.Identity.IsAuthenticated)
     {
         <p>
-            <a class="btn btn-primary btn-lg" href="@Url.Action("Register", "Account")">Zarejestruj się</a>
+            <a class="btn btn-primary btn-lg" asp-area="Identity" asp-page="/Account/Register">Zarejestruj się</a>
         </p>
     }
 </div>

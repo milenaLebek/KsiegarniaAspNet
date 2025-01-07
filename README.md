@@ -7,7 +7,7 @@ To jest aplikacja internetowa dla księgarni, napisana w ASP.NET MVC, z użyciem
 
 Aby uruchomić projekt, musisz mieć zainstalowane następujące oprogramowanie:
 
-- [.NET 6.0](https://dotnet.microsoft.com/download/dotnet) lub wyższy
+- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet) lub wyższy
 - [Visual Studio](https://visualstudio.microsoft.com/) lub [JetBrains Rider](https://www.jetbrains.com/rider/)
 - [SQLite](https://www.sqlite.org/download.html) (jeśli nie masz, aplikacja może korzystać z wbudowanego pliku bazy danych)
 
@@ -16,7 +16,7 @@ Aby uruchomić projekt, musisz mieć zainstalowane następujące oprogramowanie:
 1. Sklonuj repozytorium na swoje lokalne urządzenie:
 
    ```bash
-   git clone https://github.com/TwojaNazwaUzytkownika/ksiegarnia.git
+   git clone https://github.com/milenaLebek/KsiegarniaAspNet.git
    ```
 
 2. Przejdź do katalogu projektu:
@@ -102,7 +102,3 @@ Aplikacja zawiera prostą stronę `/Book/Cart`, która wyświetla koszyk, jednak
 - `Models` – zawiera modele danych, takie jak `Book`, `Author`, `Genre` oraz `User` (rozszerzający klasę `IdentityUser`).
 - `Data` – zawiera konfigurację bazy danych i logikę inicjalizacji danych, w tym `ApplicationDbContext` oraz metodę `SeedData` do dodawania użytkowników i ról.
 - `Views` – zawiera widoki Razor, które renderują HTML na stronie.
-
-## Licencja
-
-Ten projekt jest licencjonowany na zasadach [MIT License](LICENSE).
